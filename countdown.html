@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#e8f0f4"><title>Until Forever | Falak & Mohammad Sarik</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@300;400;500;600&family=Great+Vibes&display=swap" rel="stylesheet"><link rel="stylesheet" href="style.css"></head>
+<body class="countdown-page">
+<header class="topbar"><a class="brand-mark" href="index.html">F <i>&</i> M</a><span class="topbar-label">A DAY TO REMEMBER</span></header>
+<main class="count-layout">
+  <div class="moon-ornament">✦</div>
+  <p class="eyebrow">THE MOMENT WE HAVE BEEN WAITING FOR</p>
+  <p class="script">Until forever begins</p>
+  <h1>Counting down to<br><em>our Nikah</em></h1>
+  <div class="countdown" aria-live="polite"><div><strong id="days">00</strong><span>DAYS</span></div><b>:</b><div><strong id="hours">00</strong><span>HOURS</span></div><b>:</b><div><strong id="minutes">00</strong><span>MINUTES</span></div><b>:</b><div><strong id="seconds">00</strong><span>SECONDS</span></div></div>
+  <button class="heart-button" id="heartButton" aria-label="Reveal a special message"><span class="heart">♥</span><span class="heart-hint">TAP THE HEART</span></button>
+  <p class="heart-message" id="heartMessage">May Allah bless our union with endless happiness, barakah and love.</p>
+  <div class="signature">Dr. Falak <i>&</i> Mohammad Sarik</div><p class="final-date">31 OCTOBER 2026 · A PROMISE OF FOREVER</p>
+  <a class="next-page" href="invitation.html">← BACK TO INVITATION</a>
+</main>
+<script src="script.js"></script>
+
+<audio id="weddingMusic" preload="none" loop>
+  <source src="aaj-sajeya.mp3" type="audio/mpeg">
+</audio>
+<button class="music-control" id="musicControl" type="button" aria-label="Play wedding music">
+  <span class="music-icon">♫</span><span id="musicLabel">PLAY MUSIC</span><span class="music-status" id="musicStatus">AAJ SAJEYA</span>
+</button>
+<script>
+(() => {
+  const audio = document.getElementById('weddingMusic');
+  const button = document.getElementById('musicControl');
+  const label = document.getElementById('musicLabel');
+  const status = document.getElementById('musicStatus');
+  if (!audio || !button) return;
+  // Try autoplay when each page opens. Many browsers require the guest to tap Play Music.
+  audio.volume = 0.55;
+  audio.play().then(() => {
+    button.classList.add('playing');
+    label.textContent = 'PAUSE MUSIC';
+    button.setAttribute('aria-label', 'Pause wedding music');
+  }).catch(() => {
+    label.textContent = 'PLAY MUSIC';
+    status.textContent = 'AAJ SAJEYA';
+  });
+  button.addEventListener('click', async () => {
+    if (audio.paused) {
+      try {
+        await audio.play();
+        button.classList.add('playing');
+        label.textContent = 'PAUSE MUSIC';
+        status.textContent = 'NOW PLAYING';
+        button.setAttribute('aria-label', 'Pause wedding music');
+      } catch (e) {
+        label.textContent = 'ADD MP3 FILE';
+        status.textContent = 'CHECK FILE';
+      }
+    } else {
+      audio.pause();
+      button.classList.remove('playing');
+      label.textContent = 'PLAY MUSIC';
+      status.textContent = 'AAJ SAJEYA';
+      button.setAttribute('aria-label', 'Play wedding music');
+    }
+  });
+})();
+</script>
+
+</body></html>

@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#e8f0f4"><title>The Nikah Invitation | Falak & Mohammad Sarik</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@300;400;500;600&family=Great+Vibes&display=swap" rel="stylesheet"><link rel="stylesheet" href="style.css"></head>
+<body class="invite-page">
+<header class="topbar"><a class="brand-mark" href="index.html">F <i>&</i> M</a><span class="topbar-label">THE NIKAH · 31 OCTOBER 2026</span></header>
+<main class="invite-layout">
+  <div class="botanical botanical-left">❧<br>✦<br>❧</div><div class="botanical botanical-right">❧<br>✦<br>❧</div>
+  <article class="invite-card">
+    <div class="ornament">✦　❧　✦</div>
+    <p class="eyebrow">IN THE NAME OF ALLAH, THE MOST MERCIFUL</p>
+    <p class="invite-intro">With grateful hearts and the blessings of our families,</p>
+    <p class="script">we invite you to celebrate</p>
+    <p class="event-label">THE NIKAH OF</p>
+    <h1>Dr. Falak</h1><div class="ampersand">&</div><h1>Mohammad Sarik</h1>
+    <div class="gold-rule"><span>✧</span></div>
+    <p class="verse">Two hearts, one promise, and a lifetime of beautiful beginnings.</p>
+    <div class="date-panel"><div class="day">31</div><div class="month-year"><span>SATURDAY</span><strong>OCTOBER</strong><span>2026</span></div><div class="event-type">NIKAH</div></div>
+    <p class="venue-kicker">THE CELEBRATION WILL BE HELD AT</p><h2>Aanad Marriage Hall</h2>
+    <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Aanad+Marriage+Hall" target="_blank" rel="noopener">VIEW LOCATION ↗</a>
+    <p class="blessing">Your presence and prayers will make our day even more meaningful.</p>
+    <div class="ornament bottom-ornament">❧　✦　❧</div>
+    <a class="next-page" href="countdown.html">CONTINUE TO OUR SPECIAL DAY <span>→</span></a>
+  </article>
+  <a class="back-link" href="index.html">← BACK TO ENVELOPE</a>
+</main>
+
+<audio id="weddingMusic" preload="none" loop>
+  <source src="aaj-sajeya.mp3" type="audio/mpeg">
+</audio>
+<button class="music-control" id="musicControl" type="button" aria-label="Play wedding music">
+  <span class="music-icon">♫</span><span id="musicLabel">PLAY MUSIC</span><span class="music-status" id="musicStatus">AAJ SAJEYA</span>
+</button>
+<script>
+(() => {
+  const audio = document.getElementById('weddingMusic');
+  const button = document.getElementById('musicControl');
+  const label = document.getElementById('musicLabel');
+  const status = document.getElementById('musicStatus');
+  if (!audio || !button) return;
+  // Try autoplay when each page opens. Many browsers require the guest to tap Play Music.
+  audio.volume = 0.55;
+  audio.play().then(() => {
+    button.classList.add('playing');
+    label.textContent = 'PAUSE MUSIC';
+    button.setAttribute('aria-label', 'Pause wedding music');
+  }).catch(() => {
+    label.textContent = 'PLAY MUSIC';
+    status.textContent = 'AAJ SAJEYA';
+  });
+  button.addEventListener('click', async () => {
+    if (audio.paused) {
+      try {
+        await audio.play();
+        button.classList.add('playing');
+        label.textContent = 'PAUSE MUSIC';
+        status.textContent = 'NOW PLAYING';
+        button.setAttribute('aria-label', 'Pause wedding music');
+      } catch (e) {
+        label.textContent = 'ADD MP3 FILE';
+        status.textContent = 'CHECK FILE';
+      }
+    } else {
+      audio.pause();
+      button.classList.remove('playing');
+      label.textContent = 'PLAY MUSIC';
+      status.textContent = 'AAJ SAJEYA';
+      button.setAttribute('aria-label', 'Play wedding music');
+    }
+  });
+})();
+</script>
+
+</body></html>
