@@ -1,0 +1,507 @@
+:root {
+  --blue: #334f83;
+  --dark-blue: #20365d;
+  --light-blue: #eaf0fa;
+  --cream: #fffdf9;
+  --gold: #b99b68;
+  --text: #3d4760;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background: var(--light-blue);
+  color: var(--text);
+  line-height: 1.7;
+}
+
+button, input, select {
+  font: inherit;
+}
+
+button, a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button {
+  cursor: pointer;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.music-btn {
+  position: fixed;
+  z-index: 20;
+  top: 14px;
+  right: 14px;
+  padding: 10px 15px;
+  border: 1px solid #ffffffb0;
+  border-radius: 30px;
+  background: #ffffffed;
+  color: var(--blue);
+  box-shadow: 0 5px 20px #233c6415;
+  font-size: 12px;
+}
+
+.welcome {
+  min-height: 100svh;
+  display: grid;
+  place-items: center;
+  padding: 25px 16px;
+  background:
+    radial-gradient(ellipse at top left, #ffffff, transparent 55%),
+    radial-gradient(ellipse at bottom right, #cbd9f0, transparent 60%),
+    var(--light-blue);
+}
+
+.welcome-card {
+  width: min(100%, 430px);
+  padding: 48px 22px;
+  text-align: center;
+  background: #fffdf9ed;
+  border: 1px solid #b6c7e2;
+  outline: 5px double #d2dceb;
+  outline-offset: -12px;
+  box-shadow: 0 18px 65px #263b6118;
+  animation: floatIn 1s ease both;
+}
+
+.eyebrow {
+  color: var(--gold);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+.flower {
+  color: var(--blue);
+  font-size: 42px;
+  margin: 18px 0 4px;
+}
+
+.welcome-card h1,
+h2,
+.names,
+.welcome-names,
+.footer h2 {
+  font-family: "Great Vibes", cursive;
+  font-weight: 400;
+}
+
+.welcome-card h1 {
+  font-size: clamp(36px, 9vw, 48px);
+  color: var(--blue);
+}
+
+.welcome-names {
+  margin: 20px 0;
+  font-size: 38px;
+  line-height: 1.2;
+  color: var(--dark-blue);
+}
+
+.welcome-names span,
+.footer h2 span {
+  color: var(--gold);
+}
+
+.welcome-date {
+  letter-spacing: 4px;
+  font-size: 13px;
+  margin-bottom: 24px;
+}
+
+.primary-btn {
+  display: inline-block;
+  border: none;
+  border-radius: 30px;
+  background: var(--blue);
+  color: white;
+  padding: 13px 25px;
+  text-decoration: none;
+  font-size: 12px;
+  letter-spacing: 1px;
+  transition: transform 0.25s, background 0.25s;
+}
+
+.primary-btn:hover {
+  background: var(--dark-blue);
+  transform: translateY(-2px);
+}
+
+.primary-btn span {
+  margin-left: 8px;
+  color: #f1d7a4;
+}
+
+.small-note {
+  margin-top: 17px;
+  font-size: 10px;
+  color: #7a8497;
+}
+
+.hero {
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 80px 20px 50px;
+  text-align: center;
+}
+
+.floral {
+  background-color: var(--cream);
+  background-image:
+    radial-gradient(ellipse at 0% 0%, #dce6f7 0, transparent 32%),
+    radial-gradient(ellipse at 100% 100%, #dce6f7 0, transparent 35%),
+    radial-gradient(ellipse at 100% 0%, #f0e9dc 0, transparent 20%);
+  border: 8px solid transparent;
+  border-image: linear-gradient(135deg, #d0ddef, #fffdf9, #b4c6e4) 1;
+}
+
+.ornament {
+  color: var(--gold);
+  letter-spacing: 8px;
+  font-size: 24px;
+  margin: 24px 0;
+}
+
+.intro {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 18px;
+  font-style: italic;
+}
+
+.names {
+  font-size: clamp(49px, 12vw, 76px);
+  line-height: 1.13;
+  color: var(--dark-blue);
+  margin: 28px 0 18px;
+}
+
+.ampersand {
+  display: block;
+  color: var(--gold);
+  font-size: 45px;
+  margin: 4px 0;
+}
+
+.hero-message {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 20px;
+  line-height: 1.6;
+}
+
+.divider-flower {
+  margin: 30px 0 22px;
+  color: var(--gold);
+  font-size: 14px;
+  letter-spacing: 2px;
+}
+
+.date-label {
+  letter-spacing: 4px;
+  font-size: 11px;
+  color: var(--blue);
+}
+
+.big-date {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 30px;
+  font-weight: 600;
+  color: var(--dark-blue);
+}
+
+.weekday {
+  font-size: 10px;
+  letter-spacing: 4px;
+}
+
+.scroll-link {
+  margin-top: 35px;
+  color: var(--blue);
+  font-size: 11px;
+  text-decoration: none;
+}
+
+.section,
+.countdown-section {
+  padding: 75px 20px;
+  text-align: center;
+}
+
+.section h2,
+.countdown-section h2 {
+  color: var(--dark-blue);
+  font-size: 48px;
+  line-height: 1.3;
+  margin: 10px 0;
+}
+
+.section-description {
+  max-width: 340px;
+  margin: 0 auto 25px;
+  font-size: 12px;
+  color: #778096;
+}
+
+.scratch-wrap {
+  position: relative;
+  width: min(100%, 340px);
+  height: 235px;
+  margin: 25px auto 15px;
+  overflow: hidden;
+  border-radius: 18px;
+  box-shadow: 0 12px 35px #243b6018;
+  background: white;
+}
+
+.scratch-message {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background:
+    radial-gradient(circle at top left, #e5edfb, transparent 60%),
+    #fffdf9;
+  color: var(--dark-blue);
+}
+
+.scratch-message .heart {
+  font-size: 44px;
+  color: #809ac8;
+}
+
+.scratch-message h3 {
+  font-family: "Great Vibes", cursive;
+  font-size: 32px;
+  font-weight: 400;
+}
+
+.scratch-message p {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 18px;
+}
+
+#scratchCanvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  touch-action: none;
+  cursor: crosshair;
+}
+
+.text-btn {
+  color: var(--blue);
+  background: none;
+  border: none;
+  border-bottom: 1px solid var(--gold);
+  padding: 5px;
+  font-size: 12px;
+}
+
+.countdown-section {
+  background: var(--blue);
+  color: white;
+}
+
+.countdown-section .eyebrow {
+  color: #f0d5a4;
+}
+
+.countdown-section h2 {
+  color: white;
+}
+
+.countdown {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 30px auto 12px;
+}
+
+.countdown div {
+  min-width: 68px;
+  padding: 14px 9px;
+  border: 1px solid #ffffff55;
+  border-radius: 12px;
+}
+
+.countdown strong {
+  display: block;
+  font-size: 26px;
+  font-weight: 500;
+}
+
+.countdown span {
+  display: block;
+  font-size: 10px;
+  opacity: 0.8;
+}
+
+.countdown-section .small-note {
+  color: #e0e6f3;
+}
+
+.event-card {
+  width: min(100%, 420px);
+  margin: 28px auto 0;
+  padding: 35px 22px;
+  background: #ffffffd9;
+  border: 1px solid #d4dfef;
+  box-shadow: 0 15px 40px #243b6010;
+}
+
+.event-icon {
+  font-size: 35px;
+  color: var(--gold);
+}
+
+.event-type {
+  color: var(--gold);
+  font-size: 11px;
+  letter-spacing: 4px;
+  margin: 10px 0;
+}
+
+.event-card h3 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 23px;
+  color: var(--dark-blue);
+  font-weight: 600;
+}
+
+.event-line {
+  width: 70px;
+  height: 1px;
+  background: var(--gold);
+  margin: 22px auto;
+}
+
+.event-card > p {
+  font-size: 13px;
+}
+
+.venue-name {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 27px !important;
+  color: var(--blue);
+  margin-top: 15px;
+}
+
+.venue-note {
+  margin: 12px auto 22px;
+  max-width: 290px;
+}
+
+.map-btn {
+  font-size: 11px;
+}
+
+.rsvp-section {
+  background: #f6f8fc;
+}
+
+#rsvpForm {
+  max-width: 420px;
+  margin: 25px auto 0;
+  text-align: left;
+}
+
+#rsvpForm label {
+  display: block;
+  font-size: 12px;
+  margin: 15px 0 6px;
+}
+
+#rsvpForm input,
+#rsvpForm select {
+  width: 100%;
+  padding: 13px;
+  border: 1px solid #d3dcec;
+  border-radius: 8px;
+  background: white;
+  color: var(--text);
+  outline-color: var(--blue);
+}
+
+.form-btn {
+  width: 100%;
+  margin-top: 22px;
+}
+
+.footer {
+  text-align: center;
+  padding: 45px 20px;
+}
+
+.footer .ornament {
+  margin: 0 0 12px;
+}
+
+.footer h2 {
+  font-size: 42px;
+  color: var(--dark-blue);
+  margin: 12px 0;
+}
+
+.footer > p {
+  font-size: 12px;
+}
+
+.footer-note {
+  margin-top: 20px;
+  color: var(--blue);
+}
+
+@keyframes floatIn {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (min-width: 700px) {
+  .hero {
+    padding-top: 100px;
+    padding-bottom: 80px;
+  }
+
+  .section,
+  .countdown-section {
+    padding: 95px 25px;
+  }
+
+  .welcome-card {
+    padding: 65px 35px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    scroll-behavior: auto !important;
+    animation: none !important;
+    transition: none !important;
+  }
+}
