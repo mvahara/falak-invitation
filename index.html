@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#eaf0f8">
+  <title>Dr. Falak & Mohammad Sarik | Nikah</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <audio id="weddingMusic" loop preload="none">
+    <!-- Add a legally obtained MP3 named aaj-sajeya.mp3 to this folder. -->
+    <source src="aaj-sajeya.mp3" type="audio/mpeg">
+  </audio>
+
+  <button class="music-toggle" id="musicToggle" aria-label="Play wedding music">♫ <span>Play music</span></button>
+
+  <main>
+    <section class="envelope-screen" id="envelopeScreen" aria-label="Open invitation">
+      <p class="eyebrow">YOU ARE CORDIALLY INVITED</p>
+      <button class="envelope" id="openInvitation" aria-label="Open wedding invitation">
+        <span class="envelope-flap"></span>
+        <span class="seal">F <span>&</span> M</span>
+        <span class="envelope-hint">Tap to open</span>
+      </button>
+      <p class="tiny-note">A special invitation for a special day</p>
+    </section>
+
+    <section class="invitation page-section" id="invitation">
+      <div class="botanical botanical-top">❦</div>
+      <p class="eyebrow">IN THE NAME OF ALLAH, THE MOST MERCIFUL</p>
+      <p class="intro">Together with our families,</p>
+      <p class="intro">we invite you to celebrate the blessed occasion of our</p>
+      <p class="script">Nikah</p>
+      <div class="names">
+        <h1>Dr. Falak</h1>
+        <span class="ampersand">&</span>
+        <h1>Mohammad Sarik</h1>
+      </div>
+      <div class="ornament"><span></span> ✦ <span></span></div>
+      <p class="date-label">SATURDAY</p>
+      <p class="date">31 October, 2026</p>
+      <p class="closing-line">Your presence and blessings would mean the world to us.</p>
+      <a class="scroll-cue" href="#scratchCard">Discover the invitation <span>↓</span></a>
+      <div class="botanical botanical-bottom">❦</div>
+    </section>
+
+
+    <section class="reveal-section page-section">
+      <p class="eyebrow">A LITTLE SURPRISE</p>
+      <h2>Scratch to reveal</h2>
+      <p class="subcopy">Tap the heart to reveal our special date.</p>
+      <button class="scratch-card" id="scratchCard" aria-label="Reveal the special date">
+        <span class="sparkle">✧</span>
+        <span class="heart">♥</span>
+        <span class="scratch-text">Tap to reveal</span>
+        <span class="revealed-date">31 · 10 · 2026</span>
+      </button>
+    </section>
+
+    <section class="countdown-section page-section">
+      <p class="eyebrow">THE COUNTDOWN BEGINS</p>
+      <h2>Until our forever</h2>
+      <div class="countdown" aria-label="Countdown to the Nikah">
+        <div><strong id="days">000</strong><span>Days</span></div>
+        <div><strong id="hours">00</strong><span>Hours</span></div>
+        <div><strong id="minutes">00</strong><span>Minutes</span></div>
+        <div><strong id="seconds">00</strong><span>Seconds</span></div>
+      </div>
+      <p class="subcopy">31 October 2026</p>
+    </section>
+
+    <section class="venue-section page-section" id="venue">
+      <p class="eyebrow">SAVE THE DATE</p>
+      <h2>Our Nikah</h2>
+      <div class="venue-icon">⌖</div>
+      <p class="date">31 October, 2026</p>
+      <p class="venue-name">Aanad Marriage Hall</p>
+      <p class="closing-line">We can't wait to celebrate with you.</p>
+    </section>
+
+    <footer class="footer page-section">
+      <div class="footer-flower">✿</div>
+      <p class="script">Forever begins</p>
+      <h2>Dr. Falak <span>&</span> Mohammad Sarik</h2>
+      <p>31 October, 2026 · Nikah</p>
+      <p class="dua">May Allah bless this union with love, peace and barakah.</p>
+    </footer>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
